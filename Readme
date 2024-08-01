@@ -1,0 +1,70 @@
+Kubernestes-Overview:
+Open Sources Container Orchestration tool
+        Helps manage enviroments/Container
+        High Availability
+        Scalability
+        Disaster-Recovery
+Components:
+    Node: Physical Original Machine
+        Each Node has multiple Pods on it
+        Pod:Layer over a Container
+            1 app per Pod
+            Each pod has its own IP and communicate internally within pods
+            Can die easily 
+            New Pod created with new IP
+    Services: Static/Permenant IP Address atached to Pod
+                even pod dies Service IP stays
+                ExternalService-publicTraffic
+                InternalService-InternalTraffic
+                Also LoadBalancer
+    Ingress:  Ingress Forwards the request to service
+    ConfigMap:External Configuration of App : Database Url etc external service
+        connected to pod
+    Secret: used to store credentials encryptes base64 encoded
+        connected to pod
+    Volumes:
+        Storage
+        DB restarts:Data Gone
+        Attahces pyhsical storage to Pod hardisk/cloud
+    Deployment:
+        Replicas of pod
+        Can't Replicate DB Pod bcz they have States
+         You cannot create Pod Directly you create Deployment underneath which Pod is Created
+    Stateful Set:       
+        Replicas of DB 
+        Synchronize Read and Write
+
+
+Node
+Master:
+    Api Server: Gateway to cluster/node after validating request
+    Scheduler: Schedules where to put pod to node after analyzing resource requirement
+    Controller Manager: Detect state changes like Pod health and ask scheduler to reschedule pod
+    etcd: Manages state of pod like pod die/pod health/node resources
+Slave/Worker:
+    Container runtime : Docker etc
+    Kubelet: Interface both Container Runtime and Machine
+    Service: Communication between pods/replica
+    Kube Proxy: Forwards request to service
+
+
+
+Add new Master/Node Server:
+    1.Get new bare Server
+    2.Install all master/slave node processes
+    3.Add it to the cluster
+
+
+MiniKube:
+    Multiple Master and Worker nodes on Prod Env
+    1 Master and 1 Worker for local Env
+    1 node Kubernetes Enviroment
+Kubectl:
+    Command Line tool to interact with cluster
+
+
+Layers of Abstraction:
+    Deployment manages:
+        ReplicasSet manages:
+            Pod an abstraction of:
+                            Container:     

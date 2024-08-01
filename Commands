@@ -1,0 +1,50 @@
+-------------------------------MINIKUBE_COMMANDS--------------
+Start:      
+    minikube start --driver=virtualbox
+Status:
+    minikube Status    
+View Commands:
+    minikube    ::To view MINIKUBE_COMMANDS
+    kubectl     ::To view kubectl_commands
+Status of nodes:    
+    kubectl get nodes   
+Version:
+    kubectl Version  ::Both Client and Server Versions      
+List of Pods:
+    kubectl get pod    
+List of Services:
+    kubectl get services   
+List of Deployments:
+    kubectl get deployment       
+Help in a command:
+    Annotate command with -h tag ::kubectl create -h
+Create Deployment[Pod]:
+    kubectl create deployment [NAME] --image=image [--dry-run] [options]   
+                Example: deployment nginx-deploy --image=nginx     {Automatically Pulls ngnix image from DockerHub}
+Replicas of Pod:
+    kubectl get replicaset   
+Debug Pod:
+    kubectl describe pod [NAME] 
+    kubectl logs [pod NAME]  
+    kubectl exec -it [pod NAME]             
+Delete Deployment:
+    kubectl delete deployment [NAME]    
+Edit Deployment Img:
+    kubectl edit deployment [NAME]    
+EXECUTE Configuration File:
+    kubectl apply -f [fileName]
+Apply Service:
+    kubectl apply -f [serviceFile]    
+Additional Output:
+    kubectl get pod -o wide
+Assigning External IP to External Service:
+    minikube service [Service Name]    
+
+
+
+--------PowerShell_Enconding_Commands------------
+here we are encoding username
+$username = 'username'
+$bytes = [System.Text.Encoding]::UTF8.GetBytes($username)
+$encoded = [Convert]::ToBase64String($bytes)
+echo $encoded
