@@ -107,4 +107,10 @@ Ingress:
     Contains routing roles
     Forwards the request to internal service
     Requires Ingress Controller that does evaluation of ingress rules
-                
+Helm:
+    Package Manager for Kubernetes
+    A package of YAML file called Helm Charts on Helm Repo
+    Reuse configuration without fretting about making your own
+    A Templating Enginge a common blueprint for all config 
+    Replace value that are changed by placeholder and are get by values yaml file 
+    
