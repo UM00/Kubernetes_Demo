@@ -1,9 +1,16 @@
+![Kubernetes Logo](https://miro.medium.com/v2/resize:fit:600/1*Pbb5rmrwh-eAFWXd8ws79A.png)
+
+
 Kubernestes-Overview:
 Open Sources Container Orchestration tool
         Helps manage enviroments/Container
         High Availability
         Scalability
         Disaster-Recovery
+
+
+![Kubernetes Diagram](https://kubernetes.io/images/docs/components-of-kubernetes.svg)
+
 Components:
     Node: Physical Original Machine
         Each Node has multiple Pods on it
