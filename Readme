@@ -1,3 +1,4 @@
+
 Kubernestes-Overview:
 Open Sources Container Orchestration tool
         Helps manage enviroments/Container
@@ -68,3 +69,41 @@ Layers of Abstraction:
         ReplicasSet manages:
             Pod an abstraction of:
                             Container:     
+
+
+Kubernetes Namespace:
+    Namespace:
+        A virtual cluster inside kubernetes cluster
+        Organise resources in namespace
+        By Default Provided
+        kubernetes-dashboard: only provided in minikube
+        kube-system: System process / Master & Kubectl processes
+        kube-public: publicly accessible data / A configmap containing cluster info
+        kube-node-lease: Holds information about node / availabilty
+        default: resources created at begining
+        New namespace can be created using command or config file
+    Why to use:
+        default namespace can be filled and become complex
+        seperate namespace for specific functionality
+        namespace for DBs
+        namespace for Monitoring
+        Basically grouping your resources
+        Conflicts can occur when 2 teams deploy app with same name and can override eachother
+        Can host Staging and Development enviroment
+        Can have 2 different version of production
+        Can utilize same resources
+        Limit the resources access to different cluster 
+        Can define Resource Quota [RAM and resources for namespace]
+        Each namespace must define its own configmap and secret
+        Service can be shared over namespaces
+        Volume and Node are global cannot be put in namespace
+    Tool:
+        Kubens is a tool that makes it easier to navigate and monitor namespaces
+        A standalone tool so we need to install it seperately
+Ingress:
+    For external request to reach your Application 
+    A gateway for internet connection
+    Contains routing roles
+    Forwards the request to internal service
+    Requires Ingress Controller that does evaluation of ingress rules
+                

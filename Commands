@@ -39,8 +39,15 @@ Additional Output:
     kubectl get pod -o wide
 Assigning External IP to External Service:
     minikube service [Service Name]    
-
-
+Creating a Namespace:
+    kubectl create namespace [name]
+Create Component in Namespace:
+     kubectl apply -f [filename] --namespace=[namespace name]   
+Get from specific Namespace:
+    kubectl get [service name] -n [namespace name]
+Install Ingress Controller:
+    minikube addons enable Ingress
+             
 
 --------PowerShell_Enconding_Commands------------
 here we are encoding username
