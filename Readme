@@ -5,6 +5,7 @@ Open Sources Container Orchestration tool
         High Availability
         Scalability
         Disaster-Recovery
+
 Components:
     Node: Physical Original Machine
         Each Node has multiple Pods on it
